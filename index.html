@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A professional, in-depth guide to Decentralized Finance (DeFi): concepts, protocols, risks, and the future of open financial infrastructure." />
+<meta name="author" content="hheuristics" />
+<meta name="theme-color" content="#0b1020" />
+<title>DeFi Explained — A Professional Guide to Decentralized Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="DeFi Explained home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6ee7ff" />
+            <stop offset="1" stop-color="#7c5cff" />
+          </linearGradient>
+        </defs>
+        <path d="M16 2l12 7v14l-12 7L4 23V9z" fill="url(#lg)" opacity=".2"/>
+        <path d="M16 2l12 7v14l-12 7L4 23V9z" fill="none" stroke="url(#lg)" stroke-width="2"/>
+        <path d="M10 12h12M10 16h12M10 20h8" stroke="#eaf2ff" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>DeFi<span class="brand-dot">.</span>Explained</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#overview">Overview</a>
+      <a href="#primitives">Primitives</a>
+      <a href="#protocols">Protocols</a>
+      <a href="#risks">Risks</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">A Professional Guide</span>
+        <h1>Decentralized Finance, <span class="grad">demystified.</span></h1>
+        <p class="lead">
+          DeFi is an open, programmable financial system built on public blockchains.
+          It replaces trusted intermediaries with transparent smart contracts — enabling
+          lending, trading, derivatives, and settlement to operate 24/7 without gatekeepers.
+        </p>
+        <div class="cta-row">
+          <a href="#overview" class="btn btn-primary">Start reading</a>
+          <a href="#glossary" class="btn btn-ghost">Jump to glossary</a>
+        </div>
+        <dl class="stats" aria-label="Illustrative DeFi market indicators">
+          <div><dt>Total Value Locked</dt><dd>$80B+</dd></div>
+          <div><dt>Active Protocols</dt><dd>3,000+</dd></div>
+          <div><dt>Supported Chains</dt><dd>100+</dd></div>
+          <div><dt>Uptime</dt><dd>24 / 7 / 365</dd></div>
+        </dl>
+        <p class="disclaimer">Figures are illustrative order-of-magnitude references. See <a href="#resources">Resources</a> for live data sources.</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="card-float">
+          <div class="cf-row"><span>ETH / USDC</span><span class="up">+2.14%</span></div>
+          <div class="cf-row"><span>Supply APY</span><span>4.82%</span></div>
+          <div class="cf-row"><span>Borrow APY</span><span>6.31%</span></div>
+          <div class="cf-bar"><span style="width:68%"></span></div>
+          <div class="cf-footer">Utilization 68%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>What is DeFi?</h2>
+        <p>An introduction to the ideas, incentives, and infrastructure behind open finance.</p>
+      </div>
+      <div class="prose">
+        <p>
+          <strong>Decentralized Finance (DeFi)</strong> is an ecosystem of financial applications that run on
+          permissionless blockchains — most notably Ethereum — and coordinate without centralized operators.
+          Instead of a bank, brokerage, or exchange acting as custodian and intermediary, users interact directly
+          with <em>smart contracts</em>: self-executing code whose logic and state are publicly verifiable.
+        </p>
+        <p>
+          The result is a financial stack that is <strong>open</strong> (anyone with a wallet can participate),
+          <strong>composable</strong> (protocols plug into one another like APIs), and
+          <strong>transparent</strong> (every position, rate, and transaction is on-chain and auditable).
+          These properties enable new market structures — automated market makers, flash loans, programmable
+          vaults — that have no traditional equivalent.
+        </p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l9 5-9 5-9-5 9-5zm0 8l9 5-9 5-9-5 9-5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Non-custodial</h3>
+          <p>Users hold their own keys. Assets remain under user control; protocols cannot unilaterally seize funds.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 12l4 4 12-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Permissionless</h3>
+          <p>No applications, no KYC gate at the protocol layer. Identity is a wallet address; access is global.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+          </div>
+          <h3>Transparent</h3>
+          <p>Balances, flows, and contract logic are public. Risks can be measured directly from on-chain data.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M5 12h6V6H5v6zm8-6h6v6h-6V6zM5 18h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Composable</h3>
+          <p>Protocols interoperate atomically within a single transaction — the "money Legos" property.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="primitives" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Core primitives</h2>
+        <p>The building blocks that compose into the rest of the DeFi stack.</p>
+      </div>
+
+      <div class="primitives-grid">
+        <article class="prim">
+          <h3>Stablecoins</h3>
+          <p>
+            Tokens engineered to track a reference price — typically the US dollar.
+            Fiat-backed (USDC, USDT), crypto-collateralized (DAI), and algorithmic designs trade off
+            capital efficiency, transparency, and tail-risk in different ways.
+          </p>
+          <code>USDC · DAI · USDT · FRAX · crvUSD</code>
+        </article>
+
+        <article class="prim">
+          <h3>Decentralized Exchanges (DEXs)</h3>
+          <p>
+            Venues where assets trade without a central order book operator. Automated Market Makers
+            (AMMs) price assets algorithmically from on-chain liquidity pools, while order-book DEXs
+            replicate traditional matching on-chain or via co-processors.
+          </p>
+          <code>Uniswap · Curve · Balancer · dYdX</code>
+        </article>
+
+        <article class="prim">
+          <h3>Lending Markets</h3>
+          <p>
+            Pooled or peer-to-peer markets where suppliers deposit assets to earn interest and
+            borrowers post collateral to borrow. Interest rates adjust algorithmically to pool utilization.
+          </p>
+          <code>Aave · Compound · Morpho · Spark</code>
+        </article>
+
+        <article class="prim">
+          <h3>Derivatives</h3>
+          <p>
+            Perpetual futures, options, and structured products executed on-chain. Margining, funding,
+            and settlement are enforced by smart contracts and oracles.
+          </p>
+          <code>GMX · Synthetix · Lyra · Hyperliquid</code>
+        </article>
+
+        <article class="prim">
+          <h3>Liquid Staking</h3>
+          <p>
+            Staked assets are tokenized as liquid receipts (e.g., stETH) that can be traded, lent, or
+            used as collateral — unlocking capital efficiency for proof-of-stake networks.
+          </p>
+          <code>Lido · Rocket Pool · Jito · EtherFi</code>
+        </article>
+
+        <article class="prim">
+          <h3>Oracles &amp; Bridges</h3>
+          <p>
+            Oracles deliver external data (prices, proofs) on-chain. Bridges move value between chains.
+            Both are critical infrastructure and historically, common sources of systemic risk.
+          </p>
+          <code>Chainlink · Pyth · LayerZero · Wormhole</code>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>How a DeFi transaction works</h2>
+        <p>From wallet signature to on-chain settlement — the lifecycle of an interaction.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="step-num">01</span>
+          <h3>Connect a wallet</h3>
+          <p>A self-custodial wallet (e.g., MetaMask, Rabby, a hardware device) generates a signed message proving control of an address. No account creation required.</p>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <h3>Approve &amp; construct</h3>
+          <p>The app builds a transaction calling a smart contract — such as <span class="mono">swap()</span> on a DEX or <span class="mono">borrow()</span> on a lending market — using the user's on-chain balances.</p>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <h3>Sign locally</h3>
+          <p>The user signs with their private key. The key never leaves the device. The signed payload is broadcast to the network's mempool.</p>
+        </li>
+        <li>
+          <span class="step-num">04</span>
+          <h3>Validate &amp; settle</h3>
+          <p>Validators (or sequencers on L2s) include the transaction in a block. The contract executes deterministically; state is updated atomically.</p>
+        </li>
+        <li>
+          <span class="step-num">05</span>
+          <h3>Compose</h3>
+          <p>Output state (e.g., a receipt token) can be immediately used by another protocol in the same or a subsequent transaction — this is composability in action.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="protocols" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Protocols at a glance</h2>
+        <p>A representative selection of well-known protocols, organized by category.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="protocols">
+          <thead>
+            <tr>
+              <th scope="col">Protocol</th>
+              <th scope="col">Category</th>
+              <th scope="col">Chains</th>
+              <th scope="col">Defining idea</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Uniswap</td><td>DEX / AMM</td><td>Ethereum, L2s, multi-chain</td><td>Constant-product and concentrated liquidity market making</td></tr>
+            <tr><td>Curve</td><td>DEX / StableSwap</td><td>Ethereum, many EVMs</td><td>AMM optimized for pegged and correlated assets</td></tr>
+            <tr><td>Aave</td><td>Lending</td><td>Ethereum, L2s, multi-chain</td><td>Pooled over-collateralized borrowing with variable rates</td></tr>
+            <tr><td>MakerDAO / Sky</td><td>CDP &amp; Stablecoin</td><td>Ethereum</td><td>Decentralized stablecoin (DAI) backed by diversified collateral</td></tr>
+            <tr><td>Lido</td><td>Liquid Staking</td><td>Ethereum</td><td>Tokenized staked ETH (stETH) for composable yield</td></tr>
+            <tr><td>Chainlink</td><td>Oracles</td><td>Cross-chain</td><td>Decentralized price and data feeds via aggregated reporters</td></tr>
+            <tr><td>GMX</td><td>Perpetuals</td><td>Arbitrum, Avalanche</td><td>Pool-backed perpetuals with multi-asset GLP liquidity</td></tr>
+            <tr><td>EigenLayer</td><td>Restaking</td><td>Ethereum</td><td>Repurposing staked ETH security for additional services</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Inclusion is illustrative and not an endorsement. Always review each protocol's documentation, audits, and governance.</p>
+    </div>
+  </section>
+
+  <section id="risks" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Risks you must understand</h2>
+        <p>DeFi removes some risks and introduces others. Treat the following with seriousness proportional to your exposure.</p>
+      </div>
+
+      <div class="risks-grid">
+        <article class="risk">
+          <h3>Smart-contract risk</h3>
+          <p>Bugs or exploitable logic can lead to irreversible loss. Mitigate by preferring audited, battle-tested contracts and sizing exposure conservatively in newer systems.</p>
+        </article>
+        <article class="risk">
+          <h3>Oracle risk</h3>
+          <p>Mispriced feeds or manipulated reporters can cause bad liquidations, undercollateralized loans, or drained pools. Understand what oracle each protocol depends on.</p>
+        </article>
+        <article class="risk">
+          <h3>Bridge risk</h3>
+          <p>Cross-chain bridges have historically been among the largest attack surfaces. Assess their trust model — multisig, light client, ZK — before moving meaningful value.</p>
+        </article>
+        <article class="risk">
+          <h3>Liquidation risk</h3>
+          <p>Leveraged positions can be forcibly closed at volatile prices. Maintain conservative health factors and monitor collateral ratios continuously.</p>
+        </article>
+        <article class="risk">
+          <h3>Key-management risk</h3>
+          <p>Self-custody means you are the bank. Loss of a seed phrase is loss of funds. Use hardware wallets, consider multisig, and rehearse recovery procedures.</p>
+        </article>
+        <article class="risk">
+          <h3>Regulatory risk</h3>
+          <p>The legal treatment of tokens, protocols, and participants varies by jurisdiction and evolves rapidly. Keep informed; nothing here is legal advice.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="glossary" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Glossary</h2>
+        <p>Plain-language definitions for frequently encountered terms.</p>
+      </div>
+      <dl class="glossary">
+        <div><dt>AMM</dt><dd>Automated Market Maker — a smart contract that prices trades from a liquidity pool using a deterministic formula.</dd></div>
+        <div><dt>APY / APR</dt><dd>Annualized yield or rate. APY assumes compounding; APR does not.</dd></div>
+        <div><dt>Collateralization Ratio</dt><dd>The value of collateral divided by the value of debt. Falls as collateral prices drop or debt accrues.</dd></div>
+        <div><dt>Flash Loan</dt><dd>An uncollateralized loan that must be borrowed and repaid inside a single transaction.</dd></div>
+        <div><dt>Gas</dt><dd>The fee paid to validators to include a transaction. Priced in the network's native token.</dd></div>
+        <div><dt>Impermanent Loss</dt><dd>Opportunity cost experienced by liquidity providers when pool composition diverges from simply holding the assets.</dd></div>
+        <div><dt>Liquidation</dt><dd>Forced closure of an under-collateralized position to protect the protocol's solvency.</dd></div>
+        <div><dt>Slippage</dt><dd>The difference between expected and executed trade price, usually due to liquidity depth.</dd></div>
+        <div><dt>TVL</dt><dd>Total Value Locked — aggregate value of assets deposited in a protocol or ecosystem.</dd></div>
+        <div><dt>Yield Farming</dt><dd>Strategies that combine lending, liquidity provision, and incentives to maximize return.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="resources" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Further reading &amp; data</h2>
+        <p>Primary sources, dashboards, and documentation worth bookmarking.</p>
+      </div>
+      <div class="resources">
+        <a class="resource" href="https://ethereum.org/en/defi/" target="_blank" rel="noopener noreferrer">
+          <h3>ethereum.org — DeFi</h3><p>The Ethereum Foundation's introduction to DeFi, concepts, and getting started.</p>
+        </a>
+        <a class="resource" href="https://defillama.com" target="_blank" rel="noopener noreferrer">
+          <h3>DefiLlama</h3><p>Open dashboard for TVL, yields, fees, and protocol analytics across chains.</p>
+        </a>
+        <a class="resource" href="https://docs.aave.com" target="_blank" rel="noopener noreferrer">
+          <h3>Aave Documentation</h3><p>Reference implementation of a modern decentralized lending protocol.</p>
+        </a>
+        <a class="resource" href="https://docs.uniswap.org" target="_blank" rel="noopener noreferrer">
+          <h3>Uniswap Documentation</h3><p>The AMM that popularized on-chain spot trading and concentrated liquidity.</p>
+        </a>
+        <a class="resource" href="https://chain.link/education" target="_blank" rel="noopener noreferrer">
+          <h3>Chainlink Education</h3><p>Oracle design, data feeds, and cross-chain messaging fundamentals.</p>
+        </a>
+        <a class="resource" href="https://rekt.news" target="_blank" rel="noopener noreferrer">
+          <h3>rekt.news</h3><p>Postmortems of major DeFi exploits — essential reading for risk intuition.</p>
+        </a>
+      </div>
+
+      <aside class="callout">
+        <h3>This page is educational, not financial advice.</h3>
+        <p>
+          Protocols, rates, and risks change continuously. Do your own research, verify contract addresses,
+          and never risk more than you can afford to lose.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand brand-footer">
+        <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+          <path d="M16 2l12 7v14l-12 7L4 23V9z" fill="none" stroke="#6ee7ff" stroke-width="2"/>
+        </svg>
+        <span>DeFi.Explained</span>
+      </div>
+      <p class="muted">A professional primer on decentralized finance.</p>
+    </div>
+    <nav aria-label="Footer">
+      <h4>Sections</h4>
+      <a href="#overview">Overview</a>
+      <a href="#primitives">Primitives</a>
+      <a href="#protocols">Protocols</a>
+      <a href="#risks">Risks</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
+    <div>
+      <h4>About</h4>
+      <p class="muted">
+        Published at <span class="mono">defi.hheuristics.com</span>.
+        Content is provided for educational purposes only.
+      </p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> hheuristics. All rights reserved.</span>
+    <a href="#top" class="back-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
